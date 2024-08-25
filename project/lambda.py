@@ -39,7 +39,7 @@ def lambda_handler(event, context):
 
 
 # Fill this in with the name of your deployed model
-ENDPOINT = image-classification-2024-08-21-17-39-37-379
+ENDPOINT = 'image-classification-2024-08-21-17-39-37-379'
 
 def lambda_handler(event, context):
 
@@ -48,7 +48,7 @@ def lambda_handler(event, context):
 
     # Instantiate a Predictor
     predictor = sagemaker.predictor.Predictor(
-            endpoint_name=event['endpoint'],
+            endpoint_name=ENDPOINT,
             sagemaker_session=sagemaker.Session())
 
     # For this model the IdentitySerializer needs to be "image/png"
